@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MediCurate</title>
+    <link rel="stylesheet" href="popup.css" >
+    <style>
+        button {
+            background-color: #ccc;
+            border: 0;
+            border-radius: 0;
+            color: #3c4043;
+            cursor: pointer;
+            display: inline-block;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: pre;
+            text-align: center;
+            font-size: 14px;
+            height: 30px;
+            line-height: 27px;
+            min-width: 40px;
+            padding: 0 16px;
+            margin: 10px;
+            text-decoration-color: black;
+        }
+        button:hover {
+            border-color: #ccc;
+            box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+            color: #202124;
+        }
+        button:focus {
+            border-color: #496275;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<section class="medicurate-popup">
+    <div class="header">
+        <div class="title">
+            <h1>MediCurate</h1>
+        </div>
+        <div class="creators">
+            <p>by Carrie Smith and Ian Soh</p>
+        </div>
+    </div>
+
+    <div class="toggle">
+        <label class="switch">
+            <input type="checkbox" id="toggleOnOffBtn">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <div class="small-container" id="description">
+        Currently curating your search results
+    </div>
+    <div class="site-list-header">
+        <h4>Site List</h4>
+    </div>
+    <div class="site-list">
+        <table>
+            <tr>
+                <td>https://nhs.uk</td>
+            </tr>
+            <tr>
+                <td>https://patient.info</td>
+            </tr>
+            <tr>
+                <td>https://medlineplus.gov</td>
+            </tr>
+            <tr>
+                <td>https://www.evidence.nhs.uk</td>
+            </tr>
+            <tr>
+                <td>https://bnf.nice.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://cks.nice.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://ageuk.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://alzheimers.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://arthritisresearchuk.org</td>
+            </tr>
+            <tr>
+                <td>https://asthma.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://breastcancercare.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://bda.uk.com</td>
+            </tr>
+            <tr>
+                <td>https://bhf.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://britishlivertrust.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://blf.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://cancerresearchuk.org</td>
+            </tr>
+            <tr>
+                <td>https://corecharity.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://crohnsandcolitis.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://crohnsandcolitis.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://downs-syndrome.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://epilepsy.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://kidneyresearchuk.org</td>
+            </tr>
+            <tr>
+                <td>https://lymphomas.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://macmillan.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://mencap.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://meningitis.org</td>
+            </tr>
+            <tr>
+                <td>https://www.mentalhealth.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://www.mind.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://miscarriageassociation.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://mndassociation.org</td>
+            </tr>
+            <tr>
+                <td>https://mssociety.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://autism.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://ndcs.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://orchid-cancer.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://pancreaticcanceraction.org</td>
+            </tr>
+            <tr>
+                <td>https://scope.org.uk</td>
+            </tr>
+            <tr>
+                <td>https://stroke.org.uk</td>
+            </tr>
+        </table>
+    </div>
+    <button><a id="github-link" href="https://github.com/13carrie/medicurate" target="_blank">GitHub</a></button>
+    <div class="google-solution-challenge">
+        <h6>Google Solution Challenge 2022</h6>
+    </div>
+</section>
+<script src="popup.js"></script>
+</body>
+</html>

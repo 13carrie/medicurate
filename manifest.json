@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "MediCurate",
+  "version": "3.0.0",
+  "omnibox": { "keyword" : "medicurate" },
+  "author": "Carrie Smith",
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": [
+    "tabs",
+    "storage"
+
+  ],
+  "host_permissions": [
+    "*://*.google.com/*",
+    "*://*.google.co.uk/*"
+  ],
+
+  "action": {
+    "default_icon": {
+      "128": "medicurate128.png"
+    },
+    "default_title": "MediCurate",
+    "default_popup": "popup.html"
+  },
+
+  "icons": {
+    "16": "medicurate16.png",
+    "32": "medicurate32.png",
+    "48": "medicurate48.png",
+    "128": "medicurate128.png"
+  },
+
+  "description": "Google search result pages will only display credible health information sources when this extension is enabled."
+
+}

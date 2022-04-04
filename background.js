@@ -45,19 +45,6 @@ const sitesArray = [nhs, patient, medlinePlus, evidence, britNatForm, clinicSumm
     orchid, pancreatic, scope, strokeAssoc];
 
 let isDisabled = false;
-let url = "";
-
-//create new suggestion for when user inputs keywork 'medicurate' and any search term
-chrome.omnibox.onInputChanged.addListener((text, suggest) => {
-    if(!isDisabled) {
-        suggest([
-            {
-                content: 'text',
-                description: "Click here to curate your search! <url>${url}</url>"
-            }
-        ]);
-    }
-});
 
 //opens a google SERP in the current tab containing the user's query
 chrome.omnibox.onInputEntered.addListener((text, OnInputEnteredDisposition) => {

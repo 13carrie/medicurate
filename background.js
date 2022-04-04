@@ -1,5 +1,4 @@
-
-// sites to prioritise when google searches
+// sites to prioritise in google SERP
 const nhs = "nhs.uk";
 const patient = "patient.info";
 const medlinePlus = "medlineplus.gov";
@@ -46,37 +45,54 @@ const sitesArray = [nhs, patient, medlinePlus, evidence, britNatForm, clinicSumm
     orchid, pancreatic, scope, strokeAssoc];
 
 let isDisabled = false;
+let url = "";
 
+//create new suggestion for when user inputs keywork 'medicurate' and any search term
 chrome.omnibox.onInputChanged.addListener((text, suggest) => {
+    if(!isDisabled) {
+        suggest([
+            {
+                content: 'text',
+                description: "Click here to curate your search! <url>${url}</url>"
+            }
+        ]);
+    }
+});
+
+//opens a google SERP in the current tab containing the user's query
+chrome.omnibox.onInputEntered.addListener((text, OnInputEnteredDisposition) => {
     if(!isDisabled) {
         //make text compatible format for a url
         let result = text.replace(" ", "+");
 
         //create google search query url
-        let url = "https://google.com/search?q=" + replace + "+" + traverseSitesArray(sitesArray);
-        suggest([
-            {
-                content: 'text, url: ${url}}',
-                description: "Curate your search via MediCurate! <url>${url}</url>"
-            }
-        ]);
-        chrome.omnibox.setDefaultSuggestion({description: suggest[0].description});
+        let url = "https://google.com/search?q=" + result + "+" + traverseSitesArray(sitesArray);
+
+        console.log(url);
+        if(text.length === 0) {
+            console.log("Empty search query in omnibox. Could not open curated SERP.");
+        }
+        else if (OnInputEnteredDisposition === 'currentTab') {
+            chrome.tabs.update({url});
+        }
+        else {
+            console.log("Unknown error. Could not open curated SERP.");
+        }
     }
 });
 
+// traverses the list of credible sites in sitesArray and creates a string for modified search query URL
 function traverseSitesArray(sitesArray) {
     let queryAddOn = "site%3A" + sitesArray[0];
     for(let i = 1; i < sitesArray.length; i++) {
         queryAddOn += "+OR+site%3A" + sitesArray[i];
     }
-    console.log("sites traversal works");
     return queryAddOn;
 }
 
-//content script or service worker?
+
 function monitorIsDisabled(changes, namespace) {
     if (changes.isDisabled) {
         isDisabled = changes.isDisabled.newValue;
-        console.log("monitoring isDisabled works");
     }
 }

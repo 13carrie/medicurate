@@ -8,7 +8,6 @@ chrome.storage.sync.get("isDisabled", function (data) {
 });
 
 // "listener" for if button is toggled
-
 toggleOnOffBtn.onclick = function toggleOnOff(btn) {
     let isDisabled = !document.getElementById('toggleOnOffBtn').checked; //sets isDisabled = toggle
     setDescriptionText(isDisabled); // sets description text
